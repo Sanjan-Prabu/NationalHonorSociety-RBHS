@@ -14,7 +14,7 @@ function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-        ad;kasd;fkasd
+      W lessgo
       </Text>
     </View>
   );
