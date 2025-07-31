@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "591368664999",
+    "project_id": "nationalhonorsocietydb-d078b",
+    "storage_bucket": "nationalhonorsocietydb-d078b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591368664999:android:fa0c5a174e493dc913a882",
+        "android_client_info": {
+          "package_name": "com.nationalhonorsociety"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgRJ2TzVZSb3pIFyUi1CEUwY-RlQA6Gx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
