@@ -14,7 +14,7 @@ function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-      W lessgo
+      First Login on Android
       </Text>
     </View>
   );
