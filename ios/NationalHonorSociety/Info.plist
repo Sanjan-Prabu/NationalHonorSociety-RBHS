@@ -2,15 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>NHSBluetoothAlwaysUsageDescription</key>
-  <string>Allow NationalHonorSociety to use Bluetooth for attendance tracking.</string>
-  <key>NHSLocationWhenInUseUsageDescription</key>
-  <string>Allow NationalHonorSociety to use your location for BLE attendance.</string>
-  <key>UIBackgroundModes</key>
-  <array>
-      <string>bluetooth-central</string>
-      <string>bluetooth-peripheral</string>
-  </array>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow National Honor Society to access your camera for volunteer hour photo uploads.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow National Honor Society to access your photo library for volunteer hour submissions.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow National Honor Society to save photos to your library.</string>
+	<key>NHSBluetoothAlwaysUsageDescription</key>
+	<string>Allow National Honor Society to use Bluetooth for attendance tracking.</string>
+	<key>NHSLocationWhenInUseUsageDescription</key>
+	<string>Allow National Honor Society to use your location for BLE attendance.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -18,7 +24,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>org.reactjs.native.example.NationalHonorSociety</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

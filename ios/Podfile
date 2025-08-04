@@ -23,19 +23,29 @@ target 'NationalHonorSociety' do
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
-    :app_path => "#{Pod::Config.instance.installation_root}/.."
+    :app_path => "#{Pod::Config.instance.installation_root}/..",
+    :hermes_enabled => true  # or false to disable
+    # Removed flipper_configuration since it's not being used
   )
 
   pod 'FirebaseCoreInternal'
   pod 'GoogleUtilities'
+  # Pods for react-native-ble-manager
+  pod 'BleManager', :path => '../node_modules/react-native-ble-manager'
+  # Pod for react-native-permissions
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
+  # Pod for react-native-image-picker
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
+  # Pod for react-native-vector-icons
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   post_install do |installer|
-    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,
       config[:reactNativePath],
-      :mac_catalyst_enabled => false,
-      # :ccache_enabled => true
+      :mac_catalyst_enabled => false
     )
   end
 end

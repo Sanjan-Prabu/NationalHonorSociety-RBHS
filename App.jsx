@@ -1,35 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { useEffect } from 'react';
+import { PermissionsAndroid, Platform } from 'react-native';
+import BleManager from 'react-native-ble-manager';
 
+const App = () => {
+  useEffect(() => {
+    BleManager.start({ showAlert: false });
 
-import { Text, StyleSheet, View } from 'react-native';
+    if (Platform.OS === 'android' && Platform.Version >= 23) {
+      PermissionsAndroid.requestMultiple([
+        PermissionsAndroid.PERMISSIONS.BLUETOOTH_SCAN,
+        PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT,
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      ]).then((result) => {
+        console.log('Permission result:', result);
+      });
+    }
 
-function App() {
+    console.log('BLE Manager started');
+  }, []);
 
-
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-      First Login on Android
-      </Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center', 
-    alignItems: 'center',
-  },
-  text:{
-    color:"red",
-
-  }
-});
+  return null;
+};
 
 export default App;
