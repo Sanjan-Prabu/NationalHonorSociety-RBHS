@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+ 
+# Build outputs
+android/
+ios/
+build/
+dist/
+
+# Bundler/Metro caches
+.expo/
+.expo-shared/
+.expo-cache/
+.expo/*
+.expo-shared/*
+.expo-cache/*
+
+# Misc
+coverage/
+*.log
+
+
+android/app/google-services.json
+ios/NationalHonorSociety/GoogleService-Info.plist

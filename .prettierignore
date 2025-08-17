@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Native projects
+android/
+ios/
+
+# Build outputs
+build/
+dist/
+
+# Ignore configs/logs
+*.log
+coverage/
+android/app/google-services.json
+ios/NationalHonorSociety/GoogleService-Info.plist
