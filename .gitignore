@@ -73,6 +73,7 @@ yarn-error.log
 # Firebase & sensitive files
 GoogleService-Info.plist
 google-services.json
+firebaseConfig.ts
 
 # Miscellaneous build artifacts
 *.apk

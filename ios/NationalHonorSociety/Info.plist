@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>NSBluetoothAlwaysUsageDescription</key>
-  <string>NationalHonorSociety requires Bluetooth to scan for nearby devices.</string>
-  
-  <key>NSBluetoothPeripheralUsageDescription</key>
-  <string>NationalHonorSociety requires Bluetooth access to connect to peripherals.</string>
-  
-  <key>NSPhotoLibraryUsageDescription</key>
-  <string>NationalHonorSociety requires access to your photo library to select images.</string>
-
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -40,8 +31,14 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>NationalHonorSociety requires Bluetooth to scan for nearby devices.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>NationalHonorSociety requires Bluetooth access to connect to peripherals.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>NationalHonorSociety requires access to your photo library to select images.</string>
 	<key>RCTNewArchEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

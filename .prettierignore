@@ -14,3 +14,4 @@ dist/
 coverage/
 android/app/google-services.json
 ios/NationalHonorSociety/GoogleService-Info.plist
+firebaseConfig.ts

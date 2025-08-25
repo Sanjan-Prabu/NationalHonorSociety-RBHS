@@ -1,65 +1,31 @@
-import React, { useEffect } from 'react';
-import { View, Button, Alert, Platform } from 'react-native';
-import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
+import React from 'react';
+import './global.css';
+import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Text, View, StyleSheet } from 'react-native';
+import LandingScreen from './src/common/screens/LandingScreen';
 
-const App = () => {
-  useEffect(() => {
-    requestPermissions();
-  }, []);
-
-  const requestPermissions = async () => {
-    try {
-      // ---- Photo Library ----
-      const photoPermission = Platform.select({
-        ios: PERMISSIONS.IOS.PHOTO_LIBRARY,
-        android: PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
-      });
-
-      if (photoPermission) {
-        const photoStatus = await check(photoPermission);
-
-        if (photoStatus === RESULTS.GRANTED) {
-          Alert.alert('Photo Library Permission', 'Already granted ✅');
-        } else if (photoStatus === RESULTS.DENIED) {
-          Alert.alert('Photo Library', 'Permission denied. Please allow access in settings.');
-        } else if (photoStatus === RESULTS.UNAVAILABLE) {
-          Alert.alert('Photo Library', 'No photo library available on this device.');
-        }
-      }
-
-      // ---- Bluetooth Scan ----
-      const bluetoothPermission = Platform.select({
-        ios: PERMISSIONS.IOS.BLUETOOTH,
-        android: PERMISSIONS.ANDROID.BLUETOOTH_SCAN,
-      });
-
-      if (bluetoothPermission) {
-        const btStatus = await check(bluetoothPermission);
-
-        if (btStatus === RESULTS.GRANTED) {
-          Alert.alert('Bluetooth Permission', 'Already granted ✅');
-        } else {
-          const btResult = await request(bluetoothPermission);
-          Alert.alert('Bluetooth Permission', `Status: ${btResult}`);
-        }
-      }
-    } catch (error) {
-      console.log('Permission error:', error);
-      Alert.alert('Permission error', String(error));
-    }
-  };
-
+function Appcontent() {
+  const inset = useSafeAreaInsets();
   return (
-    <View
+    <SafeAreaView
       style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        paddingTop: inset.top + 100,
+        paddingBottom: inset.bottom + 100,
+        paddingRight: inset.right + 100,
+        paddingLeft: inset.left + 100,
       }}
     >
-      <Button title="Request Permissions" onPress={requestPermissions} />
-    </View>
+      <LandingScreen />
+    </SafeAreaView>
   );
-};
+}
+
+function App() {
+  return (
+    <SafeAreaProvider>
+      <Appcontent />
+    </SafeAreaProvider>
+  );
+}
 
 export default App;
